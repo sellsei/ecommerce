@@ -1,0 +1,5 @@
+sellsei_ecommerce_core_index:
+    path:     /
+    defaults: { _controller: SellseiEcommerceCoreBundle:Default:index }
+    options:
+        expose: true

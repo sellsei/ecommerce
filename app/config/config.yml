@@ -30,6 +30,10 @@ assetic:
     bundles:        [ ]
     filters:
         cssrewrite: ~
+        yui_css:
+            jar: "%kernel.root_dir%/../bin/yuicompressor.jar"
+        yui_js:
+            jar: "%kernel.root_dir%/../bin/yuicompressor.jar"
 
 doctrine:
     dbal:
