@@ -28,10 +28,12 @@
         "symfony/symfony": "2.5.*",
         "twig/extensions": "~1.0",
 
-        "friendsofsymfony/jsrouting-bundle": "@stable"
+        "friendsofsymfony/jsrouting-bundle": "@stable",
+        "friendsofsymfony/user-bundle": "~2.0@dev"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "phpunit/phpunit": ">=3.7"
     },
     "scripts": {
         "post-root-package-install": [
