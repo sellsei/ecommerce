@@ -1,0 +1,15 @@
+app/bootstrap*
+app/config/parameters.yml
+vendor/*
+*/logs/*
+*/cache/*
+web/bundles/*
+web/js*
+web/css*
+web/vendor/*
+web/media
+bin/*
+composer.phar
+composer.lock
+*.php~
+.vagrant/
