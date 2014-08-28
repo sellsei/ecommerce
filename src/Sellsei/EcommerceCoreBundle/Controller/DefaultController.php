@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('SellseiEcommerceCoreBundle:Default:index.html.twig', array());
     }
+
+    public function homeAction()
+    {
+        return $this->render('SellseiEcommerceCoreBundle:Default:home.html.twig', array());
+    }
 }

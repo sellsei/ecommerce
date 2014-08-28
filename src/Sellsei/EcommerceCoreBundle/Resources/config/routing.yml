@@ -3,3 +3,9 @@ sellsei_ecommerce_core_index:
     defaults: { _controller: SellseiEcommerceCoreBundle:Default:index }
     options:
         expose: true
+
+sellsei_ecommerce_core_homepage:
+    path:     /home
+    defaults: { _controller: SellseiEcommerceCoreBundle:Default:home }
+    options:
+        expose: true

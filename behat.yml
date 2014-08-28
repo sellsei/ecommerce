@@ -1,0 +1,28 @@
+default:
+    formatters:
+        pretty:
+            verbose:  true
+            paths:    false
+            snippets: false
+
+    suites:
+        homepage:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - Sellsei\EcommerceCoreBundle\Behat\CoreContext
+            filters:
+                tags: "@homepage, @javascript"
+
+    extensions:
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony2: ~
+                javascript:
+                    selenium2:
+                        wd_host: http://127.0.0.1:4444/wd/hub
+                        browser: "firefox"
+            browser_name: firefox
+            show_auto:    false
+            base_url: http://127.0.0.1/app_dev.php
+        Behat\Symfony2Extension: ~
