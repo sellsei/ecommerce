@@ -4,15 +4,11 @@ sudo apt-get update
 sudo sh -c 'DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" --force-yes -fuy dist-upgrade'
 
 sudo apt-get -y install curl build-essential python-software-properties git
-
 sudo echo "mysql-server mysql-server/root_password password root" | debconf-set-selections
 sudo echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections
-sudo apt-get -y install mysql-server mysql-client
-
-sudo mysql -u root --password=root -e "create database sellsei_ecommerce"
-
-sudo apt-get -y install php5 php5-dev apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt php5-mysql php5-imap php-apc \
-                        php5-xdebug php-pear supervisor pkg-config xvfb
+sudo apt-get -y install mysql-server mysql-client php5 php5-dev apache2 libapache2-mod-php5 php5-curl php5-gd \
+     php5-mcrypt php5-mysql php5-imap php-apc php5-xdebug php-pear supervisor pkg-config xvfb nodejs nodejs-legacy \
+     npm firefox default-jdk
 
 sudo a2enmod rewrite
 sudo a2enmod headers
@@ -32,28 +28,10 @@ sudo service apache2 restart
 sudo curl https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
-sudo apt-get install -y default-jdk
-
+echo "Installing yuicompressor"
 wget https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar
 sudo mkdir /var/www/vagrant/bin
 sudo mv -v yuicompressor-2.4.8.jar /var/www/vagrant/bin/yuicompressor.jar
-
-echo "Installing nodejs"
-cd ~
-
-if ls | grep --quiet 'node-v0.10.26.tar.gz'; then 
-  echo file exists; 
-else
-  wget http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
-fi
-
-tar xvzf node-v0.10.26.tar.gz
-cd node-v0.10.26
-./configure
-make
-sudo make install
-cd ~
-rm node-v0.10.26.tar.gz
 
 echo "Installing bower"
 sudo npm -g install bower
